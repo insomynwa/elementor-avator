@@ -1,7 +1,5 @@
 <?php
 
-namespace ElementorAvator\Modules\Woocommerce\WcTemplates\Cart;
-
 defined( 'ABSPATH' ) || exit;
 
 if ( ! function_exists( 'elementor_avator_render_mini_cart_item' ) ) {
