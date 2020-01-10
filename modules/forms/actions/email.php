@@ -194,6 +194,10 @@ class Email extends Action_Base {
 		return $element;
 	}
 
+	/**
+	 * @param \ElementorAvator\Modules\Forms\Classes\Form_Record  $record
+	 * @param \ElementorAvator\Modules\Forms\Classes\Ajax_Handler $ajax_handler
+	 */
 	public function run( $record, $ajax_handler ) {
 		$settings = $record->get( 'form_settings' );
 		$send_html = 'plain' !== $settings[ $this->get_control_id( 'email_content_type' ) ];

@@ -145,7 +145,7 @@ class Admin extends App {
 				'field_args' => [
 					'type' => 'raw_html',
 					'html' => sprintf(
-						$rollback_html . '<a data-placeholder-text="' . __( 'Reinstall v{VERSION}', 'elementor-avator' ) . '" href="#" data-placeholder-url="%s" class="button elementor-button-spinner elementor-rollback-button">%s</a>',
+						$rollback_html . '<a data-placeholder-text="' . __( 'Reinstall', 'elementor-avator' ) . ' v{VERSION}" href="#" data-placeholder-url="%s" class="button elementor-button-spinner elementor-rollback-button">%s</a>',
 						wp_nonce_url( admin_url( 'admin-post.php?action=elementor_avator_rollback&version=VERSION' ), 'elementor_avator_rollback' ),
 						__( 'Reinstall', 'elementor-avator' )
 					),

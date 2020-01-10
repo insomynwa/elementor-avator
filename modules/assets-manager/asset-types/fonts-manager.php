@@ -64,19 +64,19 @@ class Fonts_Manager {
 	 */
 	public function register_post_type_and_tax() {
 		$labels = [
-			'name' => _x( 'Custom Fonts', 'Elementor Font', 'elementor-avator' ),
-			'singular_name' => _x( 'Font', 'Elementor Font', 'elementor-avator' ),
-			'add_new' => _x( 'Add New', 'Elementor Font', 'elementor-avator' ),
-			'add_new_item' => _x( 'Add New Font', 'Elementor Font', 'elementor-avator' ),
-			'edit_item' => _x( 'Edit Font', 'Elementor Font', 'elementor-avator' ),
-			'new_item' => _x( 'New Font', 'Elementor Font', 'elementor-avator' ),
-			'all_items' => _x( 'All Fonts', 'Elementor Font', 'elementor-avator' ),
-			'view_item' => _x( 'View Font', 'Elementor Font', 'elementor-avator' ),
-			'search_items' => _x( 'Search Font', 'Elementor Font', 'elementor-avator' ),
-			'not_found' => _x( 'No Fonts found', 'Elementor Font', 'elementor-avator' ),
-			'not_found_in_trash' => _x( 'No Font found in Trash', 'Elementor Font', 'elementor-avator' ),
+			'name' => _x( 'Custom Fonts', 'CPT Name', 'elementor-avator' ),
+			'singular_name' => _x( 'Font', 'CPT Singular Name', 'elementor-avator' ),
+			'add_new' => __( 'Add New', 'elementor-avator' ),
+			'add_new_item' => __( 'Add New Font', 'elementor-avator' ),
+			'edit_item' => __( 'Edit Font', 'elementor-avator' ),
+			'new_item' => __( 'New Font', 'elementor-avator' ),
+			'all_items' => __( 'All Fonts', 'elementor-avator' ),
+			'view_item' => __( 'View Font', 'elementor-avator' ),
+			'search_items' => __( 'Search Font', 'elementor-avator' ),
+			'not_found' => __( 'No fonts found', 'elementor-avator' ),
+			'not_found_in_trash' => __( 'No fonts found in trash', 'elementor-avator' ),
 			'parent_item_colon' => '',
-			'menu_name' => _x( 'Custom Fonts', 'Elementor Font', 'elementor-avator' ),
+			'menu_name' => _x( 'Custom Fonts', 'CPT Menu Name', 'elementor-avator' ),
 		];
 
 		$args = [

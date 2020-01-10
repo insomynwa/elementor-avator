@@ -60,19 +60,19 @@ class Icons_Manager {
 	 */
 	public function register_post_type() {
 		$labels = [
-			'name' => _x( 'Custom Icons', 'Elementor Icon', 'elementor-avator' ),
-			'singular_name' => _x( 'Icon Set', 'Elementor Icon', 'elementor-avator' ),
-			'add_new' => _x( 'Add New', 'Elementor Icon', 'elementor-avator' ),
-			'add_new_item' => _x( 'Add New Icon Set', 'Elementor Icon', 'elementor-avator' ),
-			'edit_item' => _x( 'Edit Icon Set', 'Elementor Icon', 'elementor-avator' ),
-			'new_item' => _x( 'New Icon Set', 'Elementor Icon', 'elementor-avator' ),
-			'all_items' => _x( 'All Icons', 'Elementor Icon', 'elementor-avator' ),
-			'view_item' => _x( 'View Icon', 'Elementor Icon', 'elementor-avator' ),
-			'search_items' => _x( 'Search Font', 'Elementor Icon', 'elementor-avator' ),
-			'not_found' => _x( 'No Fonts found', 'Elementor Icon', 'elementor-avator' ),
-			'not_found_in_trash' => _x( 'No Icon found in Trash', 'Elementor Icon', 'elementor-avator' ),
+			'name' => _x( 'Custom Icons', 'CPT Name', 'elementor-avator' ),
+			'singular_name' => _x( 'Icon Set', 'CPT Singular Name', 'elementor-avator' ),
+			'add_new' => __( 'Add New', 'elementor-avator' ),
+			'add_new_item' => __( 'Add New Icon Set', 'elementor-avator' ),
+			'edit_item' => __( 'Edit Icon Set', 'elementor-avator' ),
+			'new_item' => __( 'New Icon Set', 'elementor-avator' ),
+			'all_items' => __( 'All Icons', 'elementor-avator' ),
+			'view_item' => __( 'View Icon', 'elementor-avator' ),
+			'search_items' => __( 'Search Icon Set', 'elementor-avator' ),
+			'not_found' => __( 'No icons found', 'elementor-avator' ),
+			'not_found_in_trash' => __( 'No icons found in trash', 'elementor-avator' ),
 			'parent_item_colon' => '',
-			'menu_name' => _x( 'Custom Icons', 'Elementor Icon', 'elementor-avator' ),
+			'menu_name' => _x( 'Custom Icons', 'CPT Menu Name', 'elementor-avator' ),
 		];
 
 		$args = [
