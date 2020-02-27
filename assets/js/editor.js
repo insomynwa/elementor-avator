@@ -1,4 +1,4 @@
-/*! elementor-avator - v2.8.3 - 10-01-2020 */
+/*! elementor-avator - v2.8.4 - 27-02-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -411,9 +411,14 @@
 			value: function onElementorInit() {
 				elementor.hooks.addFilter('editor/style/styleText', this.addCustomCss);
 	
-				elementor.settings.page.model.on('change', this.addPageCustomCss);
+				elementor.on('document:loaded', this.bindDocumentEvents.bind(this));
 	
 				elementor.on('navigator:init', this.onNavigatorInit.bind(this));
+			}
+		}, {
+			key: 'bindDocumentEvents',
+			value: function bindDocumentEvents() {
+				elementor.settings.page.model.on('change', this.addPageCustomCss);
 			}
 		}, {
 			key: 'onNavigatorInit',
