@@ -1,4 +1,4 @@
-/*! elementor-avator - v2.8.4 - 27-02-2020 */
+/*! elementor-avator - v2.8.5 - 16-03-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -567,7 +567,8 @@
 				speed: elementSettings.speed,
 				effect: this.getEffect(),
 				preventClicksPropagation: false,
-				slideToClickedSlide: true
+				slideToClickedSlide: true,
+				handleElementorBreakpoints: true
 			};
 	
 			if (elementSettings.show_arrows) {
@@ -5080,7 +5081,8 @@
 				spaceBetween: this.getSpaceBetween(),
 				loopedSlides: slidesCount,
 				loop: loop,
-				breakpoints: breakpointsSettings
+				breakpoints: breakpointsSettings,
+				handleElementorBreakpoints: true
 			};
 	
 			this.swipers.main.controller.control = this.swipers.thumbs = new Swiper(this.elements.$thumbsSwiper, thumbsSliderOptions);
@@ -6255,6 +6257,7 @@
 				effect: elementSettings.transition,
 				observeParents: true,
 				observer: true,
+				handleElementorBreakpoints: true,
 				on: {
 					slideChange: function slideChange() {
 						_this.handleKenBurns();

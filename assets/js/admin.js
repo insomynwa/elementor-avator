@@ -1,4 +1,4 @@
-/*! elementor-avator - v2.8.4 - 27-02-2020 */
+/*! elementor-avator - v2.8.5 - 16-03-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

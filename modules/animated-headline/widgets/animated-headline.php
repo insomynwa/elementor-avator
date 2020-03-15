@@ -406,7 +406,7 @@ class Animated_Headline extends Widget_Base {
 				$this->add_render_attribute( 'url', 'rel', 'nofollow' );
 			}
 
-			echo '<a ' . $this->get_render_attribute_string( 'url' );
+			echo '<a ' . $this->get_render_attribute_string( 'url' ) . '>';
 		}
 
 		?>

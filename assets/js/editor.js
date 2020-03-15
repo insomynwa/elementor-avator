@@ -1,4 +1,4 @@
-/*! elementor-avator - v2.8.4 - 27-02-2020 */
+/*! elementor-avator - v2.8.5 - 16-03-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -384,24 +384,19 @@
 		}
 	
 		_createClass(_class, [{
-			key: 'addPageCustomCss',
-			value: function addPageCustomCss() {
-				var customCSS = elementor.settings.page.model.get('custom_css');
-	
-				if (customCSS) {
-					customCSS = customCSS.replace(/selector/g, elementor.config.settings.page.cssWrapperSelector);
-	
-					elementor.settings.page.getControlsCSS().elements.$stylesheetElement.append(customCSS);
-				}
-			}
-		}, {
 			key: 'addCustomCss',
 			value: function addCustomCss(css, view) {
 				var model = view.getEditModel(),
 					customCSS = model.get('settings').get('custom_css');
 	
+				var selector = '.elementor-element.elementor-element-' + model.get('id');
+	
+				if ('document' === model.get('elType')) {
+					selector = elementor.config.settings.page.cssWrapperSelector;
+				}
+	
 				if (customCSS) {
-					css += customCSS.replace(/selector/g, '.elementor-element.elementor-element-' + view.model.id);
+					css += customCSS.replace(/selector/g, selector);
 				}
 	
 				return css;
@@ -411,14 +406,7 @@
 			value: function onElementorInit() {
 				elementor.hooks.addFilter('editor/style/styleText', this.addCustomCss);
 	
-				elementor.on('document:loaded', this.bindDocumentEvents.bind(this));
-	
 				elementor.on('navigator:init', this.onNavigatorInit.bind(this));
-			}
-		}, {
-			key: 'bindDocumentEvents',
-			value: function bindDocumentEvents() {
-				elementor.settings.page.model.on('change', this.addPageCustomCss);
 			}
 		}, {
 			key: 'onNavigatorInit',
@@ -429,11 +417,6 @@
 					title: elementorAvator.translate('custom_css'),
 					section: 'section_custom_css'
 				};
-			}
-		}, {
-			key: 'onElementorPreviewLoaded',
-			value: function onElementorPreviewLoaded() {
-				this.addPageCustomCss();
 			}
 		}]);
 	
@@ -2899,13 +2882,19 @@
 		config: elementorAvator.config.shareButtonsNetworks,
 	
 		networksClassDictionary: {
-			google: 'fa fab fa-google-plus',
-			pocket: 'fa fab fa-get-pocket',
-			email: 'fa fas fa-envelope'
+			google: 'fab fa-google-plus',
+			pocket: 'fab fa-get-pocket',
+			email: 'fas fa-envelope'
 		},
 	
 		getNetworkClass: function getNetworkClass(networkName) {
-			return this.networksClassDictionary[networkName] || 'fa fab fa-' + networkName;
+			var networkClass = this.networksClassDictionary[networkName] || 'fab fa-' + networkName;
+	
+			if (elementor.config.icons_update_needed) {
+				networkClass = 'fa ' + networkClass;
+			}
+	
+			return networkClass;
 		},
 	
 		getNetworkTitle: function getNetworkTitle(buttonSettings) {
