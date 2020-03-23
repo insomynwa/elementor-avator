@@ -245,7 +245,6 @@ class Author_Box extends Base {
 			[
 				'label' => __( 'Layout', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-avator' ),
@@ -270,7 +269,6 @@ class Author_Box extends Base {
 			[
 				'label' => __( 'Alignment', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-avator' ),
@@ -304,7 +302,6 @@ class Author_Box extends Base {
 			[
 				'label' => __( 'Vertical Align', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'top' => [
 						'title' => __( 'Top', 'elementor-avator' ),

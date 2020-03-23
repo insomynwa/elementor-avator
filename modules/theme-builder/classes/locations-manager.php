@@ -2,7 +2,7 @@
 namespace ElementorAvator\Modules\ThemeBuilder\Classes;
 
 use Elementor\Core\Files\CSS\Post as Post_CSS;
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Core\Utils;
 use ElementorAvator\Modules\ThemeBuilder\Documents\Theme_Document;
 use ElementorAvator\Modules\ThemeBuilder\Module;
 use ElementorAvator\Plugin;

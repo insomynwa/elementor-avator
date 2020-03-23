@@ -2,7 +2,7 @@
 namespace ElementorAvator\Modules\DynamicTags\Tags;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Tag;
+use ElementorAvator\Modules\DynamicTags\Tags\Base\Tag;
 use ElementorAvator\Modules\DynamicTags\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -78,7 +78,6 @@ class Contact_URL extends Tag {
 			[
 				'label' => __( 'Message', 'elementor-avator' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'label_block' => 'true',
 				'condition' => [
 					'link_type' => 'email',
 				],

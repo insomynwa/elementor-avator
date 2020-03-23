@@ -7,7 +7,7 @@ use ElementorAvator\Modules\Forms\Classes\Form_Record;
 use ElementorAvator\Modules\Forms\Controls\Fields_Map;
 use ElementorAvator\Modules\Forms\Classes\Integration_Base;
 use ElementorAvator\Modules\Forms\Classes\Drip_Handler;
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Core\Utils;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

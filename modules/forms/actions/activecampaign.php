@@ -6,7 +6,7 @@ use Elementor\Settings;
 use ElementorAvator\Modules\Forms\Classes\Form_Record;
 use ElementorAvator\Modules\Forms\Controls\Fields_Map;
 use ElementorAvator\Modules\Forms\Classes;
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Core\Utils;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

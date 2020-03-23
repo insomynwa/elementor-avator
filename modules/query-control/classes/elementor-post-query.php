@@ -3,7 +3,7 @@ namespace ElementorAvator\Modules\QueryControl\Classes;
 
 use Elementor\Widget_Base;
 use ElementorAvator\Modules\QueryControl\Module;
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Core\Utils;
 
 /**
  * Class Elementor_Post_Query

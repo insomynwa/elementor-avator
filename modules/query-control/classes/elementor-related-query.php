@@ -2,7 +2,7 @@
 namespace ElementorAvator\Modules\QueryControl\Classes;
 
 use Elementor\Widget_Base;
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Core\Utils;
 
 class Elementor_Related_Query extends Elementor_Post_Query {
 	private $fallback_args;

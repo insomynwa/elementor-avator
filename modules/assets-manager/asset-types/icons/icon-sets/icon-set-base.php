@@ -1,7 +1,7 @@
 <?php
 namespace ElementorAvator\Modules\AssetsManager\AssetTypes\Icons\IconSets;
 
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Core\Utils;
 use ElementorAvator\Modules\AssetsManager\AssetTypes\Icons\Custom_Icons;
 use ElementorAvator\Modules\AssetsManager\AssetTypes\Icons_Manager;
 

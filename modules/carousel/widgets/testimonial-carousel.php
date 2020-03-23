@@ -74,7 +74,6 @@ class Testimonial_Carousel extends Base {
 			[
 				'label' => __( 'Alignment', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'default' => 'center',
 				'options' => [
 					'left' => [

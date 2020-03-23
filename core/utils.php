@@ -1,5 +1,5 @@
 <?php
-namespace ElementorAvator\Classes;
+namespace ElementorAvator\Core;
 
 use ElementorAvator\Plugin;
 

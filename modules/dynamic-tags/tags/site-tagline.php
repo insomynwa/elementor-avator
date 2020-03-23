@@ -1,7 +1,7 @@
 <?php
 namespace ElementorAvator\Modules\DynamicTags\Tags;
 
-use Elementor\Core\DynamicTags\Tag;
+use ElementorAvator\Modules\DynamicTags\Tags\Base\Tag;
 use ElementorAvator\Modules\DynamicTags\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {

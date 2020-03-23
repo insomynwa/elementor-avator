@@ -4,7 +4,7 @@ namespace ElementorAvator\Modules\ThemeElements\Widgets;
 use Elementor\Controls_Manager;
 use Elementor\Core\Schemes;
 use Elementor\Group_Control_Typography;
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Core\Utils;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly

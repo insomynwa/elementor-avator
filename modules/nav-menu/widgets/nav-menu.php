@@ -7,14 +7,14 @@ use Elementor\Core\Responsive\Responsive;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
-use Elementor\Widget_Base;
+use ElementorAvator\Base\Base_Widget;
 use ElementorAvator\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Nav_Menu extends Widget_Base {
+class Nav_Menu extends Base_Widget {
 
 	protected $nav_menu_index = 1;
 
@@ -95,7 +95,7 @@ class Nav_Menu extends Widget_Base {
 					'type' => Controls_Manager::RAW_HTML,
 					'raw' => '<strong>' . __( 'There are no menus in your site.', 'elementor-avator' ) . '</strong><br>' . sprintf( __( 'Go to the <a href="%s" target="_blank">Menus screen</a> to create one.', 'elementor-avator' ), admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
 					'separator' => 'after',
-					'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
+					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 				]
 			);
 		}
@@ -120,7 +120,6 @@ class Nav_Menu extends Widget_Base {
 			[
 				'label' => __( 'Align', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-avator' ),
@@ -393,7 +392,6 @@ class Nav_Menu extends Widget_Base {
 					'toggle!' => '',
 					'dropdown!' => 'none',
 				],
-				'label_block' => false,
 			]
 		);
 

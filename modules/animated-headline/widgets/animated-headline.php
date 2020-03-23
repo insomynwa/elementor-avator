@@ -4,14 +4,14 @@ namespace ElementorAvator\Modules\AnimatedHeadline\Widgets;
 use Elementor\Controls_Manager;
 use Elementor\Core\Schemes;
 use Elementor\Group_Control_Typography;
-use Elementor\Widget_Base;
 use Elementor\Modules\DynamicTags\Module as TagsModule;
+use ElementorAvator\Base\Base_Widget;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Animated_Headline extends Widget_Base {
+class Animated_Headline extends Base_Widget {
 
 	public function get_name() {
 		return 'animated-headline';
@@ -208,12 +208,8 @@ class Animated_Headline extends Widget_Base {
 					],
 				],
 				'default' => 'center',
-				'selectors_dictionary' => [
-					'left' => $left,
-					'right' => $right,
-				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-headline' => 'justify-content: {{VALUE}}',
+					'{{WRAPPER}} .elementor-headline' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -396,15 +392,7 @@ class Animated_Headline extends Widget_Base {
 		}
 
 		if ( ! empty( $settings['link']['url'] ) ) {
-			$this->add_render_attribute( 'url', 'href', $settings['link']['url'] );
-
-			if ( $settings['link']['is_external'] ) {
-				$this->add_render_attribute( 'url', 'target', '_blank' );
-			}
-
-			if ( ! empty( $settings['link']['nofollow'] ) ) {
-				$this->add_render_attribute( 'url', 'rel', 'nofollow' );
-			}
+			$this->add_link_attributes( 'url', $settings['link'] );
 
 			echo '<a ' . $this->get_render_attribute_string( 'url' ) . '>';
 		}
@@ -426,7 +414,15 @@ class Animated_Headline extends Widget_Base {
 		}
 	}
 
-	protected function _content_template() {
+	/**
+	 * Render Animated Headline widget output in the editor.
+	 *
+	 * Written as a Backbone JavaScript template and used to generate the live preview.
+	 *
+	 * @since 2.9.0
+	 * @access protected
+	 */
+	protected function content_template() {
 		?>
 		<#
 		var headlineClasses = 'elementor-headline',
@@ -443,7 +439,7 @@ class Animated_Headline extends Widget_Base {
 		}
 
 		if ( settings.link.url ) { #>
-			<a htef="#">
+			<a href="#">
 		<# } #>
 				<{{{ tag }}} class="{{{ headlineClasses }}}">
 					<# if ( settings.before_text ) { #>
@@ -459,7 +455,7 @@ class Animated_Headline extends Widget_Base {
 					<# } #>
 				</{{{ tag }}}>
 		<# if ( settings.link.url ) { #>
-			<a htef="#">
+			</a>
 		<# } #>
 		<?php
 	}

@@ -2,7 +2,7 @@
 namespace ElementorAvator\Modules\DynamicTags\Tags;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Data_Tag;
+use ElementorAvator\Modules\DynamicTags\Tags\Base\Data_Tag;
 use ElementorAvator\Modules\DynamicTags\Module;
 use ElementorAvator\Modules\QueryControl\Module as QueryModule;
 

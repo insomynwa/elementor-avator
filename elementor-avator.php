@@ -3,7 +3,7 @@
  * Plugin Name: Elementor Avator
  * Description: Elementor add-on plugin
  * Author: Mr.Lorem
- * Version: 2.8.5
+ * Version: 2.9.1
  *
  * Text Domain: elementor-avator
  */
@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'ELEMENTOR_AVATOR_VERSION', '2.8.5' );
-define( 'ELEMENTOR_AVATOR_PREVIOUS_STABLE_VERSION', '2.7.3' );
+define( 'ELEMENTOR_AVATOR_VERSION', '2.9.1' );
+define( 'ELEMENTOR_AVATOR_PREVIOUS_STABLE_VERSION', '2.8.5' );
 
 define( 'ELEMENTOR_AVATOR__FILE__', __FILE__ );
 define( 'ELEMENTOR_AVATOR_PLUGIN_BASE', plugin_basename( ELEMENTOR_AVATOR__FILE__ ) );
@@ -40,14 +40,14 @@ function elementor_avator_load_plugin() {
 		return;
 	}
 
-	$elementor_version_required = '2.8.0';
+	$elementor_version_required = '2.9.6';
 	if ( ! version_compare( ELEMENTOR_VERSION, $elementor_version_required, '>=' ) ) {
 		add_action( 'admin_notices', 'elementor_avator_fail_load_out_of_date' );
 
 		return;
 	}
 
-	$elementor_version_recommendation = '2.8.0';
+	$elementor_version_recommendation = '2.9.6';
 	if ( ! version_compare( ELEMENTOR_VERSION, $elementor_version_recommendation, '>=' ) ) {
 		add_action( 'admin_notices', 'elementor_avator_admin_notice_upgrade_recommendation' );
 	}

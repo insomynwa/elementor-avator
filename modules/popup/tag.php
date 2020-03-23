@@ -2,11 +2,10 @@
 namespace ElementorAvator\Modules\Popup;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Tag as DynamicTagsTag;
+use ElementorAvator\Modules\DynamicTags\Tags\Base\Tag as DynamicTagsTag;
 use ElementorAvator\Modules\DynamicTags\Module as DynamicTagsModule;
-use ElementorAvator\Modules\LinkActions\Module as LinkActionsModule;
 use ElementorAvator\Modules\QueryControl\Module as QueryControlModule;
-use Elementor\TemplateLibrary\Source_Local;
+use ElementorAvator\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -102,7 +101,7 @@ class Tag extends DynamicTagsTag {
 			return;
 		}
 
-		$link_action_url = LinkActionsModule::create_action_url( 'popup:open', [
+		$link_action_url = Plugin::elementor()->frontend->create_action_hash( 'popup:open', [
 			'id' => $settings['popup'],
 			'toggle' => 'toggle' === $settings['action'],
 		] );
@@ -113,6 +112,6 @@ class Tag extends DynamicTagsTag {
 	}
 
 	private function print_close_popup_link( array $settings ) {
-		echo LinkActionsModule::create_action_url( 'popup:close', [ 'do_not_show_again' => $settings['do_not_show_again'] ] );
+		echo Plugin::elementor()->frontend->create_action_hash( 'popup:close', [ 'do_not_show_again' => $settings['do_not_show_again'] ] );
 	}
 }

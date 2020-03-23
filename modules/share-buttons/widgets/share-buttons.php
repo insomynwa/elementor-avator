@@ -68,10 +68,6 @@ class Share_Buttons extends Base_Widget {
 		return [ 'sharing', 'social', 'icon', 'button', 'like' ];
 	}
 
-	public function get_script_depends() {
-		return [ 'social-share' ];
-	}
-
 	protected function _register_controls() {
 		$this->start_controls_section(
 			'section_buttons_content',
@@ -133,7 +129,6 @@ class Share_Buttons extends Base_Widget {
 			[
 				'label' => __( 'View', 'elementor-avator' ),
 				'type' => Controls_Manager::SELECT,
-				'label_block' => false,
 				'options' => [
 					'icon-text' => 'Icon & Text',
 					'icon' => 'Icon',
@@ -260,7 +255,7 @@ class Share_Buttons extends Base_Widget {
 			[
 				'label' => __( 'Link', 'elementor-avator' ),
 				'type' => Controls_Manager::URL,
-				'show_external' => false,
+				'options' => false,
 				'placeholder' => __( 'https://your-link.com', 'elementor-avator' ),
 				'condition' => [
 					'share_url_type' => 'custom',
@@ -435,7 +430,6 @@ class Share_Buttons extends Base_Widget {
 			[
 				'label' => __( 'Color', 'elementor-avator' ),
 				'type' => Controls_Manager::SELECT,
-				'label_block' => false,
 				'options' => [
 					'official' => __( 'Official', 'elementor-avator' ),
 					'custom' => __( 'Custom', 'elementor-avator' ),
@@ -621,7 +615,15 @@ class Share_Buttons extends Base_Widget {
 		<?php
 	}
 
-	protected function _content_template() {
+	/**
+	 * Render Share Buttons widget output in the editor.
+	 *
+	 * Written as a Backbone JavaScript template and used to generate the live preview.
+	 *
+	 * @since 2.9.0
+	 * @access protected
+	 */
+	protected function content_template() {
 		?>
 		<#
 			var shareButtonsEditorModule = elementorAvator.modules.shareButtons,

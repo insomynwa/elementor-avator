@@ -255,7 +255,6 @@ class Countdown extends Base_Widget {
 			[
 				'label' => __( 'Message', 'elementor-avator' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'label_block' => true,
 				'separator' => 'before',
 				'dynamic' => [
 					'active' => true,
@@ -271,9 +270,8 @@ class Countdown extends Base_Widget {
 			[
 				'label' => __( 'Redirect URL', 'elementor-avator' ),
 				'type' => Controls_Manager::URL,
-				'label_block' => true,
 				'separator' => 'before',
-				'show_external' => false,
+				'options' => false,
 				'dynamic' => [
 					'active' => true,
 				],
@@ -481,7 +479,6 @@ class Countdown extends Base_Widget {
 			[
 				'label' => __( 'Alignment', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-avator' ),

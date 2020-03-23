@@ -3,7 +3,7 @@ namespace ElementorAvator\Modules\Forms\Classes;
 
 use Elementor\Settings;
 use Elementor\Widget_Base;
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Core\Utils;
 use ElementorAvator\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {

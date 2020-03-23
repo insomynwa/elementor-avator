@@ -2,8 +2,8 @@
 namespace ElementorAvator\Modules\DynamicTags\Tags;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Tag;
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Modules\DynamicTags\Tags\Base\Tag;
+use ElementorAvator\Core\Utils;
 use ElementorAvator\Modules\DynamicTags\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {

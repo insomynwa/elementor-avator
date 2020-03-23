@@ -1,7 +1,7 @@
 <?php
 namespace ElementorAvator\Modules\Forms\Classes;
 
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Core\Utils;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly

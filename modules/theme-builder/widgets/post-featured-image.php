@@ -2,6 +2,7 @@
 namespace ElementorAvator\Modules\ThemeBuilder\Widgets;
 
 use Elementor\Widget_Image;
+use ElementorAvator\Base\Base_Widget_Trait;
 use ElementorAvator\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -10,6 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Post_Featured_Image extends Widget_Image {
 
+	use Base_Widget_Trait;
+	
 	public function get_name() {
 		// `theme` prefix is to avoid conflicts with a dynamic-tag with same name.
 		return 'theme-post-featured-image';

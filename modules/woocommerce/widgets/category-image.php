@@ -2,6 +2,7 @@
 namespace ElementorAvator\Modules\ThemeBuilder\Widgets;
 
 use Elementor\Widget_Image;
+use ElementorAvator\Base\Base_Widget_Trait;
 use ElementorAvator\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -9,6 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Category_Image extends Widget_Image {
+
+	use Base_Widget_Trait;
 
 	public function get_name() {
 		return 'woocommerce-category-image';

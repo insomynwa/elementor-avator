@@ -7,14 +7,14 @@ use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
 use Elementor\Icons_Manager;
-use Elementor\Widget_Base;
 use Elementor\Modules\DynamicTags\Module as TagsModule;
+use ElementorAvator\Base\Base_Widget;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Blockquote extends Widget_Base {
+class Blockquote extends Base_Widget {
 
 	public function get_style_depends() {
 		if ( Icons_Manager::is_migration_allowed() ) {
@@ -118,7 +118,6 @@ class Blockquote extends Widget_Base {
 					'active' => true,
 				],
 				'default' => __( 'John Doe', 'elementor-avator' ),
-				'label_block' => false,
 				'separator' => 'after',
 			]
 		);
@@ -139,7 +138,6 @@ class Blockquote extends Widget_Base {
 			[
 				'label' => __( 'View', 'elementor-avator' ),
 				'type' => Controls_Manager::SELECT,
-				'label_block' => false,
 				'options' => [
 					'icon-text' => 'Icon & Text',
 					'icon' => 'Icon',
@@ -159,7 +157,6 @@ class Blockquote extends Widget_Base {
 			[
 				'label' => __( 'Skin', 'elementor-avator' ),
 				'type' => Controls_Manager::SELECT,
-				'label_block' => false,
 				'options' => [
 					'classic' => 'Classic',
 					'bubble' => 'Bubble',
@@ -179,7 +176,6 @@ class Blockquote extends Widget_Base {
 				'label' => __( 'Label', 'elementor-avator' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => __( 'Tweet', 'elementor-avator' ),
-				'label_block' => false,
 				'condition' => [
 					'tweet_button' => 'yes',
 					'tweet_button_view!' => 'icon',
@@ -192,7 +188,6 @@ class Blockquote extends Widget_Base {
 			[
 				'label' => __( 'Username', 'elementor-avator' ),
 				'type' => Controls_Manager::TEXT,
-				'label_block' => false,
 				'placeholder' => '@username',
 				'condition' => [
 					'tweet_button' => 'yes',
@@ -445,9 +440,6 @@ class Blockquote extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote__tweet-button' => 'color: {{VALUE}}',
 				],
-				'condition' => [
-					'button_color_source' => 'custom',
-				],
 			]
 		);
 
@@ -489,9 +481,6 @@ class Blockquote extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-blockquote__tweet-button:hover' => 'color: {{VALUE}}',
-				],
-				'condition' => [
-					'button_color_source' => 'custom',
 				],
 			]
 		);
@@ -889,7 +878,15 @@ class Blockquote extends Widget_Base {
 		<?php
 	}
 
-	protected function _content_template() {
+	/**
+	 * Render Blockquote widget output in the editor.
+	 *
+	 * Written as a Backbone JavaScript template and used to generate the live preview.
+	 *
+	 * @since 2.9.0
+	 * @access protected
+	 */
+	protected function content_template() {
 		?>
 		<#
 			var tweetButtonView = settings.tweet_button_view;

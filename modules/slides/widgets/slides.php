@@ -305,7 +305,6 @@ class Slides extends Base_Widget {
 			[
 				'label' => __( 'Horizontal Position', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-avator' ),
@@ -344,7 +343,6 @@ class Slides extends Base_Widget {
 			[
 				'label' => __( 'Vertical Position', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'top' => [
 						'title' => __( 'Top', 'elementor-avator' ),
@@ -383,7 +381,6 @@ class Slides extends Base_Widget {
 			[
 				'label' => __( 'Text Align', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-avator' ),
@@ -698,7 +695,6 @@ class Slides extends Base_Widget {
 			[
 				'label' => __( 'Horizontal Position', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'default' => 'center',
 				'options' => [
 					'left' => [
@@ -723,7 +719,6 @@ class Slides extends Base_Widget {
 			[
 				'label' => __( 'Vertical Position', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'default' => 'middle',
 				'options' => [
 					'top' => [
@@ -748,7 +743,6 @@ class Slides extends Base_Widget {
 			[
 				'label' => __( 'Text Align', 'elementor-avator' ),
 				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
 				'options' => [
 					'left' => [
 						'title' => __( 'Left', 'elementor-avator' ),
@@ -1193,14 +1187,9 @@ class Slides extends Base_Widget {
 			$slide_attributes = '';
 			$slide_element = 'div';
 			$btn_element = 'div';
-			$slide_url = $slide['link']['url'];
 
-			if ( ! empty( $slide_url ) ) {
-				$this->add_render_attribute( 'slide_link' . $slide_count, 'href', $slide_url );
-
-				if ( $slide['link']['is_external'] ) {
-					$this->add_render_attribute( 'slide_link' . $slide_count, 'target', '_blank' );
-				}
+			if ( ! empty( $slide['link']['url'] ) ) {
+				$this->add_link_attributes( 'slide_link' . $slide_count, $slide['link'] );
 
 				if ( 'button' === $slide['link_click'] ) {
 					$btn_element = 'a';
@@ -1285,7 +1274,15 @@ class Slides extends Base_Widget {
 		<?php
 	}
 
-	protected function _content_template() {
+	/**
+	 * Render Slides widget output in the editor.
+	 *
+	 * Written as a Backbone JavaScript template and used to generate the live preview.
+	 *
+	 * @since 2.9.0
+	 * @access protected
+	 */
+	protected function content_template() {
 		?>
 		<#
 			var direction        = elementorFrontend.config.is_rtl ? 'rtl' : 'ltr',

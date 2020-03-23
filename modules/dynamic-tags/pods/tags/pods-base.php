@@ -2,7 +2,7 @@
 namespace ElementorAvator\Modules\DynamicTags\Pods\Tags;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Tag;
+use ElementorAvator\Modules\DynamicTags\Tags\Base\Tag;
 use ElementorAvator\Modules\DynamicTags\Pods\Module;
 
 if ( ! defined( 'ABSPATH' ) ) {

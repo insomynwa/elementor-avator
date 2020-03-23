@@ -2,7 +2,7 @@
 namespace ElementorAvator\Modules\Social\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Widget_Base;
+use ElementorAvator\Base\Base_Widget;
 use ElementorAvator\Modules\Social\Classes\Facebook_SDK_Manager;
 use ElementorAvator\Modules\Social\Module;
 use ElementorAvator\Plugin;
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Facebook_Button extends Widget_Base {
+class Facebook_Button extends Base_Widget {
 
 	public function get_name() {
 		return 'facebook-button';

@@ -6,7 +6,7 @@ use ElementorAvator\Modules\Forms\Classes\Form_Record;
 use ElementorAvator\Modules\Forms\Classes\Integration_Base;
 use ElementorAvator\Modules\Forms\Controls\Fields_Map;
 use ElementorAvator\Modules\Forms\Classes\Getresponse_Handler;
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Core\Utils;
 use Elementor\Settings;
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -2,9 +2,10 @@
 namespace ElementorAvator\Modules\DynamicTags\Tags;
 
 use Elementor\Controls_Manager;
-use Elementor\Core\DynamicTags\Tag;
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Modules\DynamicTags\Tags\Base\Tag;
+use ElementorAvator\Core\Utils;
 use ElementorAvator\Modules\DynamicTags\Module;
+use ElementorAvator\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -30,6 +31,20 @@ class Page_Title extends Tag {
 	public function render() {
 		if ( is_home() && 'yes' !== $this->get_settings( 'show_home_title' ) ) {
 			return;
+		}
+
+		if ( Plugin::elementor()->common ) {
+			$current_action_data = Plugin::elementor()->common->get_component( 'ajax' )->get_current_action_data();
+
+			if ( $current_action_data && 'render_tags' === $current_action_data['action'] ) {
+				// Override the global $post for the render.
+				query_posts(
+					[
+						'p' => get_the_ID(),
+						'post_type' => 'any',
+					]
+				);
+			}
 		}
 
 		$include_context = 'yes' === $this->get_settings( 'include_context' );

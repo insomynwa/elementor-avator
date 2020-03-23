@@ -1,4 +1,4 @@
-/*! elementor-avator - v2.8.5 - 16-03-2020 */
+/*! elementor-avator - v2.9.1 - 23-03-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -90,261 +90,263 @@
 /***/ 0:
 /***/ (function(module, exports) {
 
-    function _getPrototypeOf(o) {
-        module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-          return o.__proto__ || Object.getPrototypeOf(o);
-        };
-        return _getPrototypeOf(o);
-      }
-      
-      module.exports = _getPrototypeOf;
-      
-      /***/ }),
-      
-      /***/ 1:
-      /***/ (function(module, exports) {
-      
-      function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-          "default": obj
-        };
-      }
-      
-      module.exports = _interopRequireDefault;
-      
-      /***/ }),
-      
-      /***/ 127:
-      /***/ (function(module, exports, __webpack_require__) {
-      
-      "use strict";
-      
-      
-      var _interopRequireDefault = __webpack_require__(1);
-      
-      Object.defineProperty(exports, "__esModule", {
-        value: true
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      "default": obj
+    };
+  }
+  
+  module.exports = _interopRequireDefault;
+  
+  /***/ }),
+  
+  /***/ 1:
+  /***/ (function(module, exports) {
+  
+  function _getPrototypeOf(o) {
+    module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+      return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return _getPrototypeOf(o);
+  }
+  
+  module.exports = _getPrototypeOf;
+  
+  /***/ }),
+  
+  /***/ 127:
+  /***/ (function(module, exports, __webpack_require__) {
+  
+  "use strict";
+  
+  
+  var _interopRequireDefault = __webpack_require__(0);
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  
+  var _classCallCheck2 = _interopRequireDefault(__webpack_require__(2));
+  
+  var _createClass2 = _interopRequireDefault(__webpack_require__(5));
+  
+  var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(3));
+  
+  var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(1));
+  
+  var _inherits2 = _interopRequireDefault(__webpack_require__(4));
+  
+  var Preview = /*#__PURE__*/function (_elementorModules$Vie) {
+    (0, _inherits2.default)(Preview, _elementorModules$Vie);
+  
+    function Preview() {
+      var _this;
+  
+      (0, _classCallCheck2.default)(this, Preview);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Preview).call(this));
+      elementorFrontend.on('components:init', function () {
+        return _this.onFrontendComponentsInit();
       });
-      exports.default = void 0;
-      
-      var _classCallCheck2 = _interopRequireDefault(__webpack_require__(2));
-      
-      var _createClass2 = _interopRequireDefault(__webpack_require__(5));
-      
-      var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(3));
-      
-      var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(0));
-      
-      var _inherits2 = _interopRequireDefault(__webpack_require__(4));
-      
-      var Preview = /*#__PURE__*/function (_elementorModules$Vie) {
-        (0, _inherits2.default)(Preview, _elementorModules$Vie);
-      
-        function Preview() {
-          var _this;
-      
-          (0, _classCallCheck2.default)(this, Preview);
-          _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Preview).call(this));
-          elementorFrontend.on('components:init', function () {
-            return _this.onFrontendComponentsInit();
+      return _this;
+    }
+  
+    (0, _createClass2.default)(Preview, [{
+      key: "createDocumentsHandles",
+      value: function createDocumentsHandles() {
+        var _this2 = this;
+  
+        jQuery.each(elementorFrontend.documentsManager.documents, function (index, document) {
+          var $documentElement = document.$element;
+  
+          if ($documentElement.hasClass('elementor-edit-mode')) {
+            return;
+          }
+  
+          var $existingHandle = document.$element.children('.elementor-document-handle');
+  
+          if ($existingHandle.length) {
+            return;
+          }
+  
+          var $handle = jQuery('<div>', {
+            class: 'elementor-document-handle'
+          }),
+              $handleIcon = jQuery('<i>', {
+            class: 'eicon-edit'
+          }),
+              documentTitle = $documentElement.data('elementor-title'),
+              $handleTitle = jQuery('<div>', {
+            class: 'elementor-document-handle__title'
+          }).text(elementor.translate('edit_element', [documentTitle]));
+          $handle.append($handleIcon, $handleTitle);
+          $handle.on('click', function () {
+            return _this2.onDocumentHandleClick(document);
           });
-          return _this;
-        }
-      
-        (0, _createClass2.default)(Preview, [{
-          key: "createDocumentsHandles",
-          value: function createDocumentsHandles() {
-            var _this2 = this;
-      
-            jQuery.each(elementorFrontend.documentsManager.documents, function (index, document) {
-              var $documentElement = document.$element;
-      
-              if ($documentElement.hasClass('elementor-edit-mode')) {
-                return;
-              }
-      
-              var $existingHandle = document.$element.children('.elementor-document-handle');
-      
-              if ($existingHandle.length) {
-                return;
-              }
-      
-              var $handle = jQuery('<div>', {
-                class: 'elementor-document-handle'
-              }),
-                  $handleIcon = jQuery('<i>', {
-                class: 'eicon-edit'
-              }),
-                  documentTitle = $documentElement.data('elementor-title'),
-                  $handleTitle = jQuery('<div>', {
-                class: 'elementor-document-handle__title'
-              }).text(elementor.translate('edit_element', [documentTitle]));
-              $handle.append($handleIcon, $handleTitle);
-              $handle.on('click', function () {
-                return _this2.onDocumentHandleClick(document);
-              });
-              $documentElement.prepend($handle);
-            });
-          }
-        }, {
-          key: "onDocumentHandleClick",
-          value: function onDocumentHandleClick(document) {
-            elementorCommon.api.run('editor/documents/switch', {
-              id: document.getSettings('id'),
-              mode: 'autosave'
-            });
-          }
-        }, {
-          key: "onFrontendComponentsInit",
-          value: function onFrontendComponentsInit() {
-            var _this3 = this;
-      
-            this.createDocumentsHandles();
-            elementor.on('document:loaded', function () {
-              return _this3.createDocumentsHandles();
-            });
-          }
-        }]);
-        return Preview;
-      }(elementorModules.ViewModule);
-      
-      exports.default = Preview;
-      window.elementorAvatorPreview = new Preview();
-      
-      /***/ }),
-      
-      /***/ 2:
-      /***/ (function(module, exports) {
-      
-      function _classCallCheck(instance, Constructor) {
-        if (!(instance instanceof Constructor)) {
-          throw new TypeError("Cannot call a class as a function");
-        }
-      }
-      
-      module.exports = _classCallCheck;
-      
-      /***/ }),
-      
-      /***/ 3:
-      /***/ (function(module, exports, __webpack_require__) {
-      
-      var _typeof = __webpack_require__(8);
-      
-      var assertThisInitialized = __webpack_require__(7);
-      
-      function _possibleConstructorReturn(self, call) {
-        if (call && (_typeof(call) === "object" || typeof call === "function")) {
-          return call;
-        }
-      
-        return assertThisInitialized(self);
-      }
-      
-      module.exports = _possibleConstructorReturn;
-      
-      /***/ }),
-      
-      /***/ 4:
-      /***/ (function(module, exports, __webpack_require__) {
-      
-      var setPrototypeOf = __webpack_require__(9);
-      
-      function _inherits(subClass, superClass) {
-        if (typeof superClass !== "function" && superClass !== null) {
-          throw new TypeError("Super expression must either be null or a function");
-        }
-      
-        subClass.prototype = Object.create(superClass && superClass.prototype, {
-          constructor: {
-            value: subClass,
-            writable: true,
-            configurable: true
-          }
+          $documentElement.prepend($handle);
         });
-        if (superClass) setPrototypeOf(subClass, superClass);
       }
-      
-      module.exports = _inherits;
-      
-      /***/ }),
-      
-      /***/ 5:
-      /***/ (function(module, exports) {
-      
-      function _defineProperties(target, props) {
-        for (var i = 0; i < props.length; i++) {
-          var descriptor = props[i];
-          descriptor.enumerable = descriptor.enumerable || false;
-          descriptor.configurable = true;
-          if ("value" in descriptor) descriptor.writable = true;
-          Object.defineProperty(target, descriptor.key, descriptor);
-        }
+    }, {
+      key: "onDocumentHandleClick",
+      value: function onDocumentHandleClick(document) {
+        elementorCommon.api.internal('panel/state-loading');
+        elementorCommon.api.run('editor/documents/switch', {
+          id: document.getSettings('id')
+        }).then(function () {
+          return elementorCommon.api.internal('panel/state-ready');
+        });
       }
-      
-      function _createClass(Constructor, protoProps, staticProps) {
-        if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-        if (staticProps) _defineProperties(Constructor, staticProps);
-        return Constructor;
+    }, {
+      key: "onFrontendComponentsInit",
+      value: function onFrontendComponentsInit() {
+        var _this3 = this;
+  
+        this.createDocumentsHandles();
+        elementor.on('document:loaded', function () {
+          return _this3.createDocumentsHandles();
+        });
       }
-      
-      module.exports = _createClass;
-      
-      /***/ }),
-      
-      /***/ 7:
-      /***/ (function(module, exports) {
-      
-      function _assertThisInitialized(self) {
-        if (self === void 0) {
-          throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-        }
-      
-        return self;
+    }]);
+    return Preview;
+  }(elementorModules.ViewModule);
+  
+  exports.default = Preview;
+  window.elementorAvatorPreview = new Preview();
+  
+  /***/ }),
+  
+  /***/ 2:
+  /***/ (function(module, exports) {
+  
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+  
+  module.exports = _classCallCheck;
+  
+  /***/ }),
+  
+  /***/ 3:
+  /***/ (function(module, exports, __webpack_require__) {
+  
+  var _typeof = __webpack_require__(8);
+  
+  var assertThisInitialized = __webpack_require__(7);
+  
+  function _possibleConstructorReturn(self, call) {
+    if (call && (_typeof(call) === "object" || typeof call === "function")) {
+      return call;
+    }
+  
+    return assertThisInitialized(self);
+  }
+  
+  module.exports = _possibleConstructorReturn;
+  
+  /***/ }),
+  
+  /***/ 4:
+  /***/ (function(module, exports, __webpack_require__) {
+  
+  var setPrototypeOf = __webpack_require__(9);
+  
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+  
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        writable: true,
+        configurable: true
       }
-      
-      module.exports = _assertThisInitialized;
-      
-      /***/ }),
-      
-      /***/ 8:
-      /***/ (function(module, exports) {
-      
-      function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
-      
-      function _typeof(obj) {
-        if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
-          module.exports = _typeof = function _typeof(obj) {
-            return _typeof2(obj);
-          };
-        } else {
-          module.exports = _typeof = function _typeof(obj) {
-            return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
-          };
-        }
-      
-        return _typeof(obj);
-      }
-      
-      module.exports = _typeof;
-      
-      /***/ }),
-      
-      /***/ 9:
-      /***/ (function(module, exports) {
-      
-      function _setPrototypeOf(o, p) {
-        module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-          o.__proto__ = p;
-          return o;
-        };
-      
-        return _setPrototypeOf(o, p);
-      }
-      
-      module.exports = _setPrototypeOf;
-      
-      /***/ })
-      
-      /******/ });
-      //# sourceMappingURL=preview.js.map
+    });
+    if (superClass) setPrototypeOf(subClass, superClass);
+  }
+  
+  module.exports = _inherits;
+  
+  /***/ }),
+  
+  /***/ 5:
+  /***/ (function(module, exports) {
+  
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+  
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+  
+  module.exports = _createClass;
+  
+  /***/ }),
+  
+  /***/ 7:
+  /***/ (function(module, exports) {
+  
+  function _assertThisInitialized(self) {
+    if (self === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+  
+    return self;
+  }
+  
+  module.exports = _assertThisInitialized;
+  
+  /***/ }),
+  
+  /***/ 8:
+  /***/ (function(module, exports) {
+  
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+  
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      module.exports = _typeof = function _typeof(obj) {
+        return typeof obj;
+      };
+    } else {
+      module.exports = _typeof = function _typeof(obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+  
+    return _typeof(obj);
+  }
+  
+  module.exports = _typeof;
+  
+  /***/ }),
+  
+  /***/ 9:
+  /***/ (function(module, exports) {
+  
+  function _setPrototypeOf(o, p) {
+    module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+  
+    return _setPrototypeOf(o, p);
+  }
+  
+  module.exports = _setPrototypeOf;
+  
+  /***/ })
+  
+  /******/ });
+  //# sourceMappingURL=preview.js.map

@@ -2,7 +2,7 @@
 namespace ElementorAvator\Modules\QueryControl\Controls;
 
 use Elementor\Controls_Manager;
-use ElementorAvator\Classes\Utils;
+use ElementorAvator\Core\Utils;
 use ElementorAvator\Modules\QueryControl\Module as Query_Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
