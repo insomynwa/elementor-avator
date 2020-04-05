@@ -121,7 +121,7 @@
   .elementor-editor-active .elementor.elementor-edit-mode .elementor-global-widget .elementor-editor-widget-settings .elementor-editor-element-setting.elementor-editor-element-save {
     display: none; }
 
-.elementor-widget-posts:after {
+.elementor-widget-posts:after, .elementor-widget-archive-posts:after {
   display: none; }
 
 .elementor-posts-container.elementor-posts-masonry {

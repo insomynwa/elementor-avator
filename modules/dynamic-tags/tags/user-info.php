@@ -44,6 +44,8 @@ class User_Info extends Tag {
 				$value = isset( $user->$field ) ? $user->$field : '';
 				break;
 			case 'id':
+				$value = $user->ID;
+				break;
 			case 'description':
 			case 'first_name':
 			case 'last_name':

@@ -1,4 +1,4 @@
-/*! elementor-avator - v2.9.1 - 23-03-2020 */
+/*! elementor-avator - v2.9.2 - 05-04-2020 */
 @charset "UTF-8";
 .elementor-bg-transform .elementor-bg {
   will-change: transform; }
@@ -197,7 +197,7 @@
   .elementor-editor-active .elementor.elementor-edit-mode .elementor-global-widget .elementor-editor-widget-settings .elementor-editor-element-setting.elementor-editor-element-save {
     display: none; }
 
-.elementor-widget-posts:after {
+.elementor-widget-posts:after, .elementor-widget-archive-posts:after {
   display: none; }
 
 .elementor-posts-container.elementor-posts-masonry {

@@ -1386,6 +1386,12 @@ class Form extends Form_Base {
 			<input type="hidden" name="post_id" value="<?php echo Utils::get_current_post_id(); ?>"/>
 			<input type="hidden" name="form_id" value="<?php echo $this->get_id(); ?>"/>
 
+			<?php if ( is_singular() ) {
+				// `queried_id` may be different from `post_id` on Single theme builder templates.
+				?>
+				<input type="hidden" name="queried_id" value="<?php echo get_the_ID(); ?>"/>
+			<?php } ?>
+			
 			<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
 				<?php
 				foreach ( $instance['form_fields'] as $item_index => $item ) :

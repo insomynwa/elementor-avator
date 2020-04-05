@@ -902,8 +902,16 @@ class Blockquote extends Base_Widget {
 						<# } #>
 						<# if ( 'yes' === settings.tweet_button ) { #>
 							<a href="#" class="elementor-blockquote__tweet-button">
-								<# if ( 'text' !== tweetButtonView ) { #>
-									<i class="fa fa-twitter" aria-hidden="true"></i><span class="elementor-screen-only"><?php esc_html_e( 'Tweet', 'elementor-avator' ); ?></span>
+							<# if ( 'text' !== tweetButtonView ) {
+									// If FontAwesome migration has been done, load the FA5 version, otherwise load FA4
+									if ( ! elementor.config.icons_update_needed ) { #>
+										<i class="fab fa-twitter" aria-hidden="true"></i>
+									<# } else { #>
+										<i class="fa fa-twitter" aria-hidden="true"></i>
+									<# } #>
+									<# if ( 'icon-text' !== tweetButtonView ) { #>
+										<span class="elementor-screen-only"><?php esc_html_e( 'Tweet', 'elementor-avator' ); ?></span>
+									<# } #>
 								<# } #>
 								<# if ( 'icon-text' === tweetButtonView || 'text' === tweetButtonView ) { #>
 									<span class="elementor-inline-editing elementor-blockquote__tweet-label" data-elementor-setting-key="tweet_button_label" data-elementor-inline-editing-toolbar="none">{{{ settings.tweet_button_label }}}</span>

@@ -1286,8 +1286,8 @@ class Slides extends Base_Widget {
 		?>
 		<#
 			var direction        = elementorFrontend.config.is_rtl ? 'rtl' : 'ltr',
-				next            = elementorFrontend.config.is_rtl ? 'right' : 'left',
-				prev              = elementorFrontend.config.is_rtl ? 'left' : 'right',
+				next             = elementorFrontend.config.is_rtl ? 'left' : 'right',
+				prev             = elementorFrontend.config.is_rtl ? 'right' : 'left',
 				navi             = settings.navigation,
 				showDots         = ( 'dots' === navi || 'both' === navi ),
 				showArrows       = ( 'arrows' === navi || 'both' === navi ),
